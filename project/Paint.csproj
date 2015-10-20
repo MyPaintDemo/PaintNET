@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67EC9A66-B915-4F6D-BCC1-3B244356BE55}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Paint</RootNamespace>
+    <AssemblyName>Paint</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorChoicer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HatchChoicer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HatchChoicer.Designer.cs">
+      <DependentUpon>HatchChoicer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LineStyleChoicer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LineStyleChoicer.Designer.cs">
+      <DependentUpon>LineStyleChoicer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LineWidthChoicer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LineWidthChoicer.Designer.cs">
+      <DependentUpon>LineWidthChoicer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewImageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImageDialog.Designer.cs">
+      <DependentUpon>NewImageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shape.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HatchChoicer.resx">
+      <DependentUpon>HatchChoicer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LineStyleChoicer.resx">
+      <DependentUpon>LineStyleChoicer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LineWidthChoicer.resx">
+      <DependentUpon>LineWidthChoicer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImageDialog.resx">
+      <DependentUpon>NewImageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\fillrectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\fillellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\chooser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\apply_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\cancel_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\delete_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\edit_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\text.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
